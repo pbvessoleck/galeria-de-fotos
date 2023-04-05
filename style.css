@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #eeebff;
+}
+header{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+}
+.destaque{
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #F20505;
+    
+}
+.gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
+    padding: 0 2vw;
+}
+.gallery-items{
+    width: 340px;
+    height: 340px;
+    box-shadow: 5px 5px 5px #0006;
+    flex-grow: 1;
+    transition: transform .3s linear;
+    border-radius: 34px;
+}
+.gallery-items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 34px;
+}
+
+.gallery-items:hover{
+    transform: scale(1.2);
+}
+
+.gallery-items h2{
+    color:aliceblue;
+    font-weight: 300;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transition: scale(0.1);
+}
+.imagen.hover .gallery-items{
+    height: 100%;
+    cursor: pointer;
+} 
+
+footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: red;
+}
