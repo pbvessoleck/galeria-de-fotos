@@ -1,76 +1,148 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+
 }
-body{
-    background-color: #eeebff;
-}
+
 header{
-    height: 150px;
+    height: 95px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-header h1{
-    font-family: 'Libre Baskerville', serif;
-    font-size: 3rem;
-    font-weight: 900;
+    font-family: 'Sedgwick Ave Display', cursive;
     color: white;
+    font-size: 30px;
+    margin-top: -10;
 }
-.destaque{
-    font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    color: #F20505;
+a{
+    text-decoration: none;
+}
+ul,ol,li{
+    list-style: none;
+}
+
+body{
+    
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    padding-left: 96px;
+    padding-right: 96px;
+    background-color: black;
+
+}
+.galeria{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    gap: 12px;
+    grid-template-areas: 
+    "f1 f1 f1 f1 f1 f2 f2 f2 f3 f3 f3"
+    "f1 f1 f1 f1 f1 f4 f4 f4 f5 f5 f5"
+    "f6 f6 f6 f7 f7 f7 f8 f8 f8 f8 f8";
+    margin-top: 10px;
+
+}
+.foto{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+.foto:nth-child(1){
+    grid-area: f1;
+    background-image: url(./fotos/foto10.jpeg);
+    
+
+}
+.foto:nth-child(2){
+    grid-area: f2;
+    background-image: url(./fotos/foto22.jpg);
     
 }
-.gallery-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 2vw;
-    padding: 0 2vw;
+.foto:nth-child(3){
+    grid-area: f3;
+    background-image: url(./fotos/cassio2.jpg);
 }
-.gallery-items{
-    width: 340px;
-    height: 340px;
-    box-shadow: 5px 5px 5px #0006;
-    flex-grow: 1;
-    transition: transform .3s linear;
-    border-radius: 34px;
+.foto:nth-child(4){
+    grid-area: f4;
+    background-image: url(./fotos/foto0.jpg);
+
+    
 }
-.gallery-items img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 34px;
+.foto:nth-child(5){
+    grid-area: f5;
+    background-image: url(./fotos/foto3.jpg);
+}
+.foto:nth-child(6){
+    grid-area: f6;
+    background-image: url(./fotos/corinthians.jpg);
+}
+.foto:nth-child(7){
+    grid-area: f7;
+    background-image: url(./fotos/foto11.jpeg);
+    
+}
+.foto:nth-child(8){
+    grid-area: f8;
+    background-image: url(./fotos/rib5280.webp);
 }
 
-.gallery-items:hover{
-    transform: scale(1.2);
-}
-
-.gallery-items h2{
-    color:aliceblue;
-    font-weight: 300;
-    font-size: 30px;
+.foto__info{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    transition: scale(0.1);
-}
-.imagen.hover .gallery-items{
-    height: 100%;
-    cursor: pointer;
-} 
+    width: 100%;
+    height: 64px;
+    background-color: #0009;
+    color: white;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: 2s;
 
+}
+.foto:hover > .foto__info{
+    transform: translateY(0%);
+}
+@media(max-width: 768px){
+    body{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .galeria{
+        display: flex;
+        flex-direction: column;
+    }
+    .foto{
+        width: 100%;
+        height: 33vh;
+    }
+}
 footer{
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-style: italic;
-    color: red;
+}
+.ver_mais{
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+}
+.ver_mais *{
+    text-decoration: none;
+    color: white;
+}
+.ver_mais:hover{
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    transform: scale(1.3);
 }
